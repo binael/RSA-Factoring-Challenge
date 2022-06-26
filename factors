@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import sys, ctypes
+
+prime = ctypes.CDLL("./c_prime.so")
+
+with open(sys.argv[1], "br") as fileno:
+	for line in fileno:
+		if prime.rsa_prime(line):
+			for num in range(3, int((int(line)) ** 0.5), 2):
+				if int(line) % num == 0:
+					print("{:.0f}={:.0f}*{:.0f}".format(int(line), int(line) / num, num))
+					break
