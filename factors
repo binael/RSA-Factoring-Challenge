@@ -7,8 +7,9 @@ if len(sys.argv) != 2:
 	sys.exit()
 with open(sys.argv[1], "br") as fileno:
 	for line in fileno.readlines():
-		if prime.rsa_prime(line):
-			for num in range(3, int((int(line)) ** 0.5), 2):
-				if int(line) % num == 0:
-					print("{:.0f}={:.0f}*{:.0f}".format(int(line), int(line) / num, num))
-					break
+		prime.rsa_prime(line)
+		# if prime.rsa_prime(line):
+		# 	for num in range(3, int((int(line)) ** 0.5), 2):
+		# 		if int(line) % num == 0:
+		# 			print("{:.0f}={:.0f}*{:.0f}".format(int(line), int(line) / num, num))
+		# 			break
