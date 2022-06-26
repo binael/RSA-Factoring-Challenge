@@ -3,7 +3,8 @@
 import sys, ctypes
 
 prime = ctypes.CDLL("./c_prime.so")
-
+if len(sys.argv) != 2:
+	sys.exit()
 with open(sys.argv[1], "br") as fileno:
 	for line in fileno.readlines():
 		if prime.rsa_prime(line):

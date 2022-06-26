@@ -19,6 +19,12 @@ int rsa_prime(char *number)
 	num = atoll(number);
 	i = 3;
 
+	if (num < 4)
+	{
+		printf("%llu=%llu*%d\n", num, num, 1);
+		return (0);
+	}
+
 	if (num % 2 == 0)
 	{
 		printf("%llu=%llu*%d\n", num, (num / 2), 2);
