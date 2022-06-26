@@ -13,7 +13,7 @@ int rsa_prime(char *number)
 {
 	unsigned long long num, i;
 
-	if (strlen(number) > 16)
+	if (strlen(number) > 18)
 		return (1);
 
 	num = atoll(number);
